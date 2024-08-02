@@ -52,6 +52,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const closeLogin = document.getElementById('closeLogin');
     const closeSignup = document.getElementById('closeSignup');
 
+
     function updateButtonStates() {
         const loginModalVisible = window.getComputedStyle(loginModal).display === 'block';
         const signupModalVisible = window.getComputedStyle(signupModal).display === 'block';
@@ -92,12 +93,14 @@ document.addEventListener("DOMContentLoaded", function() {
     loginButton.addEventListener('click', () => {
         loginModal.style.display = 'block';
         signupModal.style.display = 'none';
+        document.getElementById('menuShowMore').checked = false;
         updateButtonStates();
     });
 
     signupButton.addEventListener('click', () => {
         signupModal.style.display = 'block';
         loginModal.style.display = 'none';
+        document.getElementById('menuShowMore').checked = false;
         updateButtonStates();
     });
 
@@ -182,7 +185,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const contactEmailform = document.getElementById('contactEmail');
     const contactNumber = document.getElementById('contactNumber');
     const contactEmail = document.getElementById('emailId');
-
+    
 
     // Handling the form event for showing the feature is in developing phase
     contactPhoneform.addEventListener('submit', function(e){
@@ -200,9 +203,11 @@ document.addEventListener("DOMContentLoaded", function() {
         if(!contactEmail.value){
             showNotification('Please fill your Contact email','warning');
             return;
+        }else{
+            showNotification('This feature is in developing phase');
         }
-        showNotification('This feature is in developing phase');
     });
+
 
     //---------------------------------------------------------------------------------------------
 
@@ -241,6 +246,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
         showNotification('Sign Up Successful!', 'success');
         signupModal.style.display = 'none';
+        document.getElementById('menuShowMore').checked = true;
         updateButtonStates();
     });
 
@@ -263,6 +269,7 @@ document.addEventListener("DOMContentLoaded", function() {
             localStorage.setItem('isLoggedIn', 'true');
             localStorage.setItem('loggedInUser', username);
             loginModal.style.display = 'none';
+            document.getElementById('menuShowMore').checked = true;
             updateButtonStates();
         } else {
             showNotification('Invalid username or password!', 'warning');
@@ -274,9 +281,21 @@ document.addEventListener("DOMContentLoaded", function() {
         localStorage.setItem('isLoggedIn', 'false');
         localStorage.removeItem('loggedInUser');
         showNotification('Logged Out Successfully!', 'warning');
+        document.getElementById('menuShowMore').checked = false;
         updateButtonStates();
+    });
+
+
+    document.querySelector('#appStore').addEventListener('click',()=>{
+        showNotification('The app is developing phase');
+    });
+
+    document.querySelector('#playStore').addEventListener('click',()=>{
+        showNotification('The app is developing phase');
     });
 
     // Initial button state update
     updateButtonStates();
+
+    // ----------------------------------------------------------------------------------
 });

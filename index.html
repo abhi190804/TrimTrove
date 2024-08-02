@@ -8,6 +8,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>TrimTrove |Saloon at your home</title>
   <link rel="stylesheet" href="hair.css" />
+  <link rel="stylesheet" media="only screen and (max-width: 1350px)" href="phone.css" />
 </head>
 
 <body>
@@ -16,11 +17,16 @@
       <div id="app">
         <h4><a href="#getTheApp">TrimTrove</a></h4>
       </div>
+      <input type="checkbox" id="menuShowMore" />
+      <label for="menuShowMore" class="menu">
+        <ion-icon name="menu" id="moremenu"></ion-icon>
+        <ion-icon name="close" id="closemenu"></ion-icon>
+      </label>
       <ul class="nav-bar">
-        <button>Add Barber Shop</button>
-        <button id="loginButton">Log In</button>
-        <button id="signupButton">Sign Up</button>
-        <button id="logoutButton">Logout</button>
+        <button style="--i:0">Add Barber Shop</button>
+        <button id="loginButton" style="--i:1">Log In</button>
+        <button id="signupButton" style="--i:2">Sign Up</button>
+        <button id="logoutButton" style="--i:1">Logout</button>
       </ul>
     </nav>
     <div class="head">
@@ -36,28 +42,20 @@
   </header>
   <section class="sec-1">
     <div class="box">
-      <div class="white">
-        <p>Hair Care</p>
-      </div>
       <img src="./img/cardimage1.jpg" />
+      <p>Hair Care</p>
     </div>
     <div class="box">
-      <div class="white">
-        <p>Skin Care</p>
-      </div>
       <img src="./img/cardImage2.jpg" />
+      <p>Skin Care</p>
     </div>
     <div class="box">
-      <div class="white">
-        <p>Body Care</p>
-      </div>
       <img src="./img/cardImage3.jpg" />
+      <p>Body Care</p>
     </div>
     <div class="box">
-      <div class="white">
-        <p>Groom Special</p>
-      </div>
       <img src="./img/cardImage4.avif" />
+      <p>Groom Special</p>
     </div>
   </section>
   <section class="middle">
@@ -167,18 +165,18 @@
           </div>
         </div>
         <form id="contactEmail" class="flex email active">
-          <input class="input" type="email" id="emailId" placeholder="example@email.com"/>
+          <input class="input" type="email" id="emailId" placeholder="example@email.com" />
           <input type="submit" value="Submit" />
         </form>
         <form id="contactPhone" class="flex phone">
-          <input class="input" type="tele" id="contactNumber" placeholder="+91 1234567890"/>
+          <input class="input" type="tele" id="contactNumber" placeholder="+91 1234567890" />
           <input type="submit" value="Submit" />
         </form>
         <div class="downloadTab">
           <p class="Download">Download App from</p>
           <div class="flex app">
-            <img src="./img/appStore.png" />
-            <img src="./img/playStore.webp" />
+            <img src="./img/appStore.png" id="appStore"/>
+            <img src="./img/playStore.webp" id="playStore"/>
           </div>
         </div>
       </div>
@@ -192,8 +190,8 @@
         <span class="close" id="closeLogin">&times;</span>
         <h2>Log In</h2>
         <form id="loginForm">
-          <input type="text" id="login-username" placeholder="Username"/>
-          <input type="password" id="login-password" placeholder="Password"/>
+          <input type="text" id="login-username" placeholder="Username" />
+          <input type="password" id="login-password" placeholder="Password" />
           <button type="submit">Log In</button>
         </form>
       </div>
@@ -205,10 +203,10 @@
         <span class="close" id="closeSignup">&times;</span>
         <h2>Sign Up</h2>
         <form id="signupForm">
-          <input type="text" id="signup-name" placeholder="Name"  />
-          <input type="text" id="signup-username" placeholder="Username"  />
-          <input type="password" id="signup-password" placeholder="Password"  />
-          <input type="password" id="signup-confirm-password" placeholder="Confirm Password"  />
+          <input type="text" id="signup-name" placeholder="Name" />
+          <input type="text" id="signup-username" placeholder="Username" />
+          <input type="password" id="signup-password" placeholder="Password" />
+          <input type="password" id="signup-confirm-password" placeholder="Confirm Password" />
           <button type="submit">Sign Up</button>
         </form>
       </div>
