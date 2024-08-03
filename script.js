@@ -294,6 +294,12 @@ document.addEventListener("DOMContentLoaded", function() {
         showNotification('The app is developing phase');
     });
 
+    document.querySelector('#addBarberShop').addEventListener('click',()=>{
+        showNotification('The app is developing phase');
+    });
+
+
+
     // Initial button state update
     updateButtonStates();
 
